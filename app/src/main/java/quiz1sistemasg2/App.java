@@ -7,9 +7,6 @@ public class App {
     
 
     public static void main(String[] args) {
-        
-       
-
     }
 
     /*  Implemente una funcion llamada calcularValorHora que cumpla con las siguientes caracteristicas
@@ -21,9 +18,52 @@ public class App {
         * Controlar errores retornando -1
     */
     //------------------------------------------------------------------
-    
+        public static int calcularValorHora(String tipoVehiculo, int horasDePermanencia) {
+            
+            try {
 
+            double Carro = 5000;
+            double Moto = 3000;
+            double Bicicleta = 1000;
+            int valorTotalHoras = 0;
+            int valorTotalExtra = 0;
+            int horasExtra = 0;
+            int valorHorasDescuento = 0;
 
+                switch (tipoVehiculo) {
+                    case "C":
+
+                    valorTotalHoras = (int)(horasDePermanencia * Carro);
+                    break;
+
+                    case "M":
+
+                    valorTotalHoras = (int)(horasDePermanencia * Moto);
+                    break;
+
+                    case "B":
+                    valorTotalHoras = (int)(horasDePermanencia * Bicicleta);
+                    break;
+                
+                    default:
+                    break;
+                }
+                
+                if (horasDePermanencia <= 0)
+                    return -1;
+                    
+                else if (horasDePermanencia > 3)
+
+                    horasExtra = (horasDePermanencia - 3);
+                    valorTotalExtra = valorTotalHoras + (horasExtra * 2000);
+                    return valorTotalExtra;
+                 
+                } 
+                catch (Exception e) {
+                     return -1;
+            }
+
+        
     //------------------------------------------------------------------
 
     /*  Implemente una funcion llamada calcularDescuento que cumpla con las siguientes caracteristicas
@@ -37,7 +77,23 @@ public class App {
     */
     //------------------------------------------------------------------
     
+        public static int calcularDescuento(int valorTotalH, int estudiante, int cantidadHoras){
 
+            try {
+
+                int ValorDescuento = 0;
+            
+                ValorDescuento = (int)(valorTotalH * 0.3);
+                return ValorDescuento;
+            }
+
+
+
+            } catch (Exception e) {
+                return -1;
+            }
+
+        }
 
     //------------------------------------------------------------------
 
@@ -54,3 +110,4 @@ public class App {
 
     //------------------------------------------------------------------
 }
+
